@@ -5,8 +5,8 @@ function updatePackageDistJson() {
     const pkg = { ...JSON.parse(fs.readFileSync('package.json')) }
     delete pkg['devDependencies']
     delete pkg['scripts']
-    pkg['main'] = 'dist/cjs/index.js'
-    pkg['module'] = 'dist/es/index.js'
+    pkg['main'] = 'cjs/index.js'
+    pkg['module'] = 'es/index.js'
     fs.writeFileSync('dist/package.json', JSON.stringify(pkg, null, 4))
 }
 
