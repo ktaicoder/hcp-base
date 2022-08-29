@@ -29,3 +29,9 @@ export interface IHw {
     // openDevice: (opts: any) => Promise<IDevice>
     createControl: (ctx: any) => IHwControl
 }
+
+export interface IHwEmul {
+    runCmd: (hwId: string, cmd: string, ...args: unknown[]) => Promise<any>
+    onEmulStart: () => Promise<void>
+    onEmulStop: () => Promise<void>
+}
