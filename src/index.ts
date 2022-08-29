@@ -14,9 +14,13 @@ export interface IDevice {
 }
 
 export interface IHwControl {
-    // 자동 호출 함수
-    onAfterOpen(ctx: any): Promise<void>
+    observeData(): Observable<Uint8Array>
+
+    // 연결이 되었을 때 자동으로 호출되는 함수
     onBeforeClose(ctx: any): Promise<void>
+
+    // 연결 끊어졌을 때 자동으로 호출되는 함수
+    onAfterOpen(ctx: any): Promise<void>
 }
 
 export interface IHw {
