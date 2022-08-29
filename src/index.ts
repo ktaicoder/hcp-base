@@ -31,7 +31,9 @@ export interface IHw {
 }
 
 export interface IHwEmul {
-    runCmd: (hwId: string, cmd: string, ...args: unknown[]) => Promise<any>
+    runCmd: (emulCtx: any, hwId: string, cmd: string, ...args: unknown[]) => Promise<any>
+
     onEmulStart: () => Promise<void>
+
     onEmulStop: () => Promise<void>
 }
