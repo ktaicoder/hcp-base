@@ -37,3 +37,22 @@ export interface IHwEmul {
 
     onEmulStop: () => Promise<void>
 }
+
+/*~ https://wicg.github.io/serial/#dom-serialoptions */
+export type HardwareSerialOptions = {
+    baudRate: number
+    dataBits?: number // 7 or 8
+    stopBits?: number // 1 or 2
+    parity?: 'none' | 'even' | 'odd'
+    bufferSize?: number // default 255
+    flowControl?: 'none' | 'hardware'
+}
+
+export type Hardware = {
+    hwId: string
+    kind: 'serial'
+    hwName: string
+    shortHwName: string
+    packetLengthHint?: number
+    serialOptions?: HardwareSerialOptions
+}
