@@ -37,4 +37,6 @@ export interface IHwEmul {
     onEmulStart: () => Promise<void>
 
     onEmulStop: () => Promise<void>
+
+    onEmulDestroyed: () => Promise<void>
 }
