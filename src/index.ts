@@ -26,7 +26,9 @@ export interface IHwControl {
 
 export interface IHw {
     hwId: string
+
     hwKind: 'serial'
+
     // openDevice: (opts: any) => Promise<IDevice>
     createControl: (ctx: any) => IHwControl
 }
