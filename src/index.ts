@@ -42,3 +42,22 @@ export interface IHwEmul {
 
     onEmulDestroyed: () => Promise<void>
 }
+
+/**
+ * 하드웨어 전송 프로토콜
+ * legacy: socketio기반으로 기존에 통신하던 방식
+ * hcp: 20220901 하드웨어 제어를 위해 개발한 웹소켓 기반의 통신방식
+ */
+export type HwTransportProto = 'legacy' | 'hcp'
+
+/**
+ * 하드웨어 연결 모드
+ * pcProgram: PC 프로그램과 연결하는 방식
+ */
+export type HwConnModeKey = 'pcProgram' | 'webSerial' | 'androidApp'
+
+export const HwConnMode: Record<HwConnModeKey, string> = {
+    pcProgram: 'PC프로그램',
+    webSerial: '웹시리얼',
+    androidApp: '안드로이드앱',
+}
