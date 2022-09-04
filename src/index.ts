@@ -52,12 +52,12 @@ export type HwTransportProto = 'legacy' | 'hcp'
 
 /**
  * 하드웨어 연결 모드
- * pcProgram: PC 프로그램과 연결하는 방식
+ * net: 연결 프로그램을 이용하는 방식
+ * webSerial: 웹시리얼을 이용하는 방식
  */
-export type HwConnModeKey = 'pcProgram' | 'webSerial' | 'androidApp'
+export type HwConnModeKey = 'net' | 'webSerial'
 
 export const HwConnMode: Record<HwConnModeKey, string> = {
-    pcProgram: 'PC프로그램',
+    net: '연결 프로그램',
     webSerial: '웹시리얼',
-    androidApp: '안드로이드앱',
 }
