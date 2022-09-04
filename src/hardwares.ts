@@ -32,7 +32,6 @@ export const hardwares: Hardware[] = [
         hwName: '와이즈 엑스보드',
         shortHwName: '엑스보드',
         packetLengthHint: 19,
-
         // baudRate 외에는 web serial 기본값이다
         serialOptions: {
             baudRate: 38400,
@@ -44,7 +43,7 @@ export const hardwares: Hardware[] = [
         kind: 'serial',
         hwName: 'KT AI Codiny IoT 키트',
         shortHwName: 'IoT 키트',
-        packetLengthHint: 20,
+        packetLengthHint: 19,
 
         // baudRate 외에는 web serial 기본값이다
         serialOptions: {
@@ -53,3 +52,8 @@ export const hardwares: Hardware[] = [
         },
     },
 ]
+
+export const hardwareMap: Record<string, Hardware> = hardwares.reduce((acc, cur) => {
+    acc[cur.hwId] = cur
+    return acc
+}, {})
