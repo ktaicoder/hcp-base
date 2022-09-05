@@ -8,26 +8,19 @@ export type HardwareSerialOptions = {
     flowControl?: 'none' | 'hardware' // default none
 }
 
-type SerialHardware = {
-    kind: 'serial'
-    serialOptions: HardwareSerialOptions
-}
-
-type EtcHardware = {
-    kind: 'etc'
-}
-
 export type Hardware = {
     hwId: string
     hwName: string
     shortHwName: string
+    kind: 'serial' | 'etc'
+    serialOptions?: HardwareSerialOptions
     packetLengthHint?: number
     supportDesktop: boolean
     supportChromeOS: boolean
     supportIOS: boolean
     supportAndroid: boolean
     supportCodinypack: boolean
-} & (SerialHardware | EtcHardware)
+}
 
 const DEFAULT_SERIAL_OPTIONS: Omit<HardwareSerialOptions, 'baudRate'> = {
     dataBits: 8, // 7 or 8
