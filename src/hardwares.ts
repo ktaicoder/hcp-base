@@ -85,3 +85,41 @@ export const hardwareMap: Record<string, Hardware> = hardwares.reduce((acc, cur)
     acc[cur.hwId] = cur
     return acc
 }, {})
+
+export interface IHwConnEnv {
+    isChromeOS: boolean
+    isCodingpack: boolean
+    isMobile: boolean
+    isAndroid: boolean
+    isIOS: boolean
+    isDesktop: boolean
+    isWindows: boolean
+    isMacOs: boolean
+}
+
+type HwFilterFn = (hw: Hardware) => boolean
+
+/**
+ * Env 필터 함수 생성
+ * @param connEnv
+ * @returns
+ */
+export function createEnvFilterFn(connEnv: IHwConnEnv): HwFilterFn {
+    if (connEnv.isCodingpack) {
+        return (hw) => hw.supportCodinypack
+    }
+
+    if (connEnv.isChromeOS) {
+        return (hw) => hw.supportChromeOS
+    }
+
+    if (connEnv.isAndroid) {
+        return (hw) => hw.supportAndroid
+    }
+
+    if (connEnv.isIOS) {
+        return (hw) => hw.supportIOS
+    }
+
+    return (hw) => hw.supportDesktop
+}
