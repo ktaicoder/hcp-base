@@ -8,14 +8,26 @@ export type HardwareSerialOptions = {
     flowControl?: 'none' | 'hardware' // default none
 }
 
+type SerialHardware = {
+    kind: 'serial'
+    serialOptions: HardwareSerialOptions
+}
+
+type EtcHardware = {
+    kind: 'etc'
+}
+
 export type Hardware = {
     hwId: string
-    kind: 'serial'
     hwName: string
     shortHwName: string
     packetLengthHint?: number
-    serialOptions?: HardwareSerialOptions
-}
+    supportPc: boolean
+    supportChromeOS: boolean
+    supportIOS: boolean
+    supportAndroid: boolean
+    supportCodinypack: boolean
+} & (SerialHardware | EtcHardware)
 
 const DEFAULT_SERIAL_OPTIONS: Omit<HardwareSerialOptions, 'baudRate'> = {
     dataBits: 8, // 7 or 8
@@ -32,11 +44,17 @@ export const hardwares: Hardware[] = [
         hwName: '와이즈 엑스보드',
         shortHwName: '엑스보드',
         packetLengthHint: 19,
+
         // baudRate 외에는 web serial 기본값이다
         serialOptions: {
             baudRate: 38400,
             ...DEFAULT_SERIAL_OPTIONS,
         },
+        supportPc: true,
+        supportChromeOS: true,
+        supportIOS: true,
+        supportAndroid: true,
+        supportCodinypack: true,
     },
     {
         hwId: 'wiseXboardPremium',
@@ -50,6 +68,23 @@ export const hardwares: Hardware[] = [
             baudRate: 38400,
             ...DEFAULT_SERIAL_OPTIONS,
         },
+        supportPc: true,
+        supportChromeOS: true,
+        supportIOS: true,
+        supportAndroid: true,
+        supportCodinypack: true,
+    },
+    {
+        hwId: 'ozo',
+        kind: 'etc',
+        hwName: '오조봇',
+        shortHwName: '오조봇',
+        packetLengthHint: undefined,
+        supportPc: false,
+        supportChromeOS: false,
+        supportIOS: false,
+        supportAndroid: false,
+        supportCodinypack: true,
     },
 ]
 
