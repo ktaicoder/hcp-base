@@ -104,7 +104,7 @@ type HwFilterFn = (hw: Hardware) => boolean
  * @param connEnv
  * @returns
  */
-export function createEnvFilterFn(connEnv: IHwConnEnv): HwFilterFn {
+export function createHwEnvFilterFn(connEnv: IHwConnEnv): HwFilterFn {
     if (connEnv.isCodingpack) {
         return (hw) => hw.supportCodinypack
     }
@@ -122,4 +122,11 @@ export function createEnvFilterFn(connEnv: IHwConnEnv): HwFilterFn {
     }
 
     return (hw) => hw.supportDesktop
+}
+
+export function createHwFilterFn(connEnv: IHwConnEnv, serialPortOnly: boolean): HwFilterFn {
+    const envFilterFn = createHwEnvFilterFn(connEnv)
+    if (!serialPortOnly) return envFilterFn
+    const serialPortFilterFn = (hw: Hardware) => !!hw.serialOptions
+    return (hw: Hardware) => envFilterFn(hw) && serialPortFilterFn(hw)
 }
