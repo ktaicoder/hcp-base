@@ -22,7 +22,7 @@ export type Hardware = {
     hwName: string
     shortHwName: string
     packetLengthHint?: number
-    supportPc: boolean
+    supportDesktop: boolean
     supportChromeOS: boolean
     supportIOS: boolean
     supportAndroid: boolean
@@ -50,7 +50,7 @@ export const hardwares: Hardware[] = [
             baudRate: 38400,
             ...DEFAULT_SERIAL_OPTIONS,
         },
-        supportPc: true,
+        supportDesktop: true,
         supportChromeOS: true,
         supportIOS: true,
         supportAndroid: true,
@@ -68,7 +68,7 @@ export const hardwares: Hardware[] = [
             baudRate: 38400,
             ...DEFAULT_SERIAL_OPTIONS,
         },
-        supportPc: true,
+        supportDesktop: true,
         supportChromeOS: true,
         supportIOS: true,
         supportAndroid: true,
@@ -80,7 +80,7 @@ export const hardwares: Hardware[] = [
         hwName: '오조봇',
         shortHwName: '오조봇',
         packetLengthHint: undefined,
-        supportPc: false,
+        supportDesktop: false,
         supportChromeOS: false,
         supportIOS: false,
         supportAndroid: false,
