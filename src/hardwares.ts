@@ -36,7 +36,7 @@ export const hardwares: Hardware[] = [
         kind: 'serial',
         hwName: 'KT AI Codiny IoT 키트',
         shortHwName: 'IoT 키트',
-        packetLengthHint: 19,
+        packetLengthHint: 11,
 
         // baudRate 외에는 web serial 기본값이다
         serialOptions: {
