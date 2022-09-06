@@ -32,10 +32,10 @@ const DEFAULT_SERIAL_OPTIONS: Omit<HardwareSerialOptions, 'baudRate'> = {
 
 export const hardwares: Hardware[] = [
     {
-        hwId: 'wiseXboard',
+        hwId: 'wiseXboardPremium',
         kind: 'serial',
-        hwName: '와이즈 엑스보드',
-        shortHwName: '엑스보드',
+        hwName: 'KT AI Codiny IoT 키트',
+        shortHwName: 'IoT 키트',
         packetLengthHint: 19,
 
         // baudRate 외에는 web serial 기본값이다
@@ -50,10 +50,10 @@ export const hardwares: Hardware[] = [
         supportCodinypack: true,
     },
     {
-        hwId: 'wiseXboardPremium',
+        hwId: 'wiseXboard',
         kind: 'serial',
-        hwName: 'KT AI Codiny IoT 키트',
-        shortHwName: 'IoT 키트',
+        hwName: '와이즈 엑스보드',
+        shortHwName: '엑스보드',
         packetLengthHint: 19,
 
         // baudRate 외에는 web serial 기본값이다
