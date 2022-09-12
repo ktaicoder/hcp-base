@@ -26,8 +26,8 @@ const DEFAULT_SERIAL_OPTIONS: Omit<HardwareSerialOptions, 'baudRate'> = {
     dataBits: 8, // 7 or 8
     stopBits: 1, // 1 or 2
     parity: 'none', // 'none' | 'even' | 'odd'
-    bufferSize: 255,
     flowControl: 'none', // 'none' | 'hardware'
+    bufferSize: 255,
 }
 
 export const hardwares: Hardware[] = [

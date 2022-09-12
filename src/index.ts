@@ -34,6 +34,12 @@ export interface IHw {
 }
 
 export interface IHwEmul {
+    connect: () => Promise<any>
+
+    waitUntilConnected: () => Promise<any>
+
+    isConnected: () => boolean
+
     runCmd: (emulCtx: any, hwId: string, cmd: string, ...args: unknown[]) => Promise<any>
 
     onEmulStart: () => Promise<void>
