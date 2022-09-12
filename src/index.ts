@@ -34,7 +34,7 @@ export interface IHw {
 }
 
 export interface IHwEmul {
-    connect: () => Promise<any>
+    connect: (hwId: string) => Promise<any>
 
     waitUntilConnected: () => Promise<any>
 
