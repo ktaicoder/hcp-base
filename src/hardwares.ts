@@ -79,6 +79,41 @@ export const hardwares: Hardware[] = [
         supportAndroid: false,
         supportCodinypack: true,
     },
+    {
+        hwId: 'exMarsCube',
+        kind: 'serial',
+        hwName: 'eX-Mars Cube',
+        shortHwName: 'eX-Mars Cube',
+        packetLengthHint: undefined,
+        // baudRate 외에는 web serial 기본값이다
+        serialOptions: {
+            baudRate: 115200,
+            ...DEFAULT_SERIAL_OPTIONS,
+        },
+        supportDesktop: true,
+        supportChromeOS: false,
+        supportIOS: false,
+        supportAndroid: false,
+        supportCodinypack: false,
+    },
+
+    {
+        hwId: 'saeonAltinoLite',
+        kind: 'serial',
+        hwName: '새온 알티노라이트',
+        shortHwName: '알티노라이트',
+        packetLengthHint: undefined,
+        // baudRate 외에는 web serial 기본값이다
+        serialOptions: {
+            baudRate: 115200,
+            ...DEFAULT_SERIAL_OPTIONS,
+        },
+        supportDesktop: true,
+        supportChromeOS: false,
+        supportIOS: false,
+        supportAndroid: false,
+        supportCodinypack: false,
+    },
 ]
 
 export const hardwareMap: Record<string, Hardware> = hardwares.reduce((acc, cur) => {
