@@ -5,6 +5,8 @@ import { Hardware } from './types'
 import { wiseXboard } from './wiseXboard'
 import { wiseXboardPremium } from './wiseXboardPremium'
 
+export * from './types'
+
 export const hardwares: Hardware[] = [
     wiseXboard, //
     wiseXboardPremium,
