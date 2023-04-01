@@ -8,10 +8,10 @@
 
 ## 설치 방법
 
-- 다음과 같이 설치할 수 있다.
+- 다음과 같이 설치할 수 있습니다.
 
 ```bash
-$  yarn add @ktaicoder/hcp-base
+$ npm install @ktaicoder/hcp-base
 ```
 
 ## NPM 링크
