@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs'
-export * from './hardwares'
+export * from './hw'
 
 export type HwDeviceState = 'opening' | 'opened' | 'closing' | 'closed'
 

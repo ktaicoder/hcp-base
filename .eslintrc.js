@@ -22,6 +22,7 @@ module.exports = {
     plugins: ['prettier'],
     rules: {
         'no-useless-constructor': 'off',
+        'no-unused-vars': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
@@ -39,7 +40,6 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
-        'no-unused-vars': [1],
         'no-console': 'off',
         'no-empty': [0],
         // 'comma-dangle': [
