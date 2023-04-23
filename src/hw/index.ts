@@ -1,5 +1,6 @@
 import { exMarsCube } from './exMarsCube'
 import { ozo } from './ozo'
+import { saeonAl } from './saeonAl'
 import { saeonAltinoLite } from './saeonAltinoLite'
 import { Hardware } from './types'
 import { wiseXboard } from './wiseXboard'
@@ -13,6 +14,7 @@ export const hardwares: Hardware[] = [
     ozo,
     exMarsCube,
     saeonAltinoLite,
+    saeonAl,
 ]
 
 export const hardwareMap: Record<string, Hardware> = hardwares.reduce((acc, cur) => {
