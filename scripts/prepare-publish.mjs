@@ -1,5 +1,6 @@
-const shell = require('shelljs')
-const fs = require('fs')
+import shell from 'shelljs'
+import fs from 'fs'
+import path from 'path'
 
 async function main() {
   console.log(path.resolve('.'))
@@ -13,4 +14,3 @@ async function main() {
 }
 
 main()
-
