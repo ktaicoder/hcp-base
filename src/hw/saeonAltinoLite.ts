@@ -13,7 +13,7 @@ export const saeonAltinoLite: Hardware = {
         ...DEFAULT_SERIAL_OPTIONS,
     },
     supportDesktop: true,
-    supportChromeOS: false,
+    supportChromeOS: true,
     supportIOS: false,
     supportAndroid: false,
     supportCodinypack: false,
