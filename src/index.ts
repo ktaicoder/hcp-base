@@ -40,6 +40,8 @@ export interface IHwEmul {
 
     isConnected: () => boolean
 
+    observeNotifications: (channelId: string) => Observable<{ type: string }>
+
     runCmd: (emulCtx: any, hwId: string, cmd: string, ...args: unknown[]) => Promise<any>
 
     onEmulStart: () => Promise<void>
